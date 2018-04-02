@@ -3,16 +3,22 @@ var schema = {
   "properties": {
     "cars": {
       "type": "array",
-      "minItems": 3,
-      "maxItems": 5,
+      "minItems": 7,
+      "maxItems": 11,
       "items": {
         "type": "object",
         "properties": {
           "id": {
-            "type": "number",
-            "unique": true,
-	    "faker": "random.uuid",
-            "minimum": 1
+            "type": "string",
+	          "faker": "random.uuid"
+          },
+          "image": {
+            "type": "string",
+            "faker": "image.transport"
+          },
+          "email": {
+            "type": "string",
+            "faker": "internet.email"
           },
           "name": {
             "type": "string",
@@ -22,16 +28,20 @@ var schema = {
             "type": "string",
             "faker": "company.companyName"
           },
-	  "model": {
-	    "type": "string",
-	    "faker": "company.companyName"
-	  },
+          "model": {
+            "type": "string",
+            "faker": "company.companyName"
+          },
           "year": {
             "type": "string",
             "faker": "date.past"
+          },
+          "availability": {
+            "type": "string",
+            "enum": ["In Dealership", "Unavailable", "Out of Stock"]
           }
         },
-        "required": ["id", "name", "make", "model", "year"]
+        "required": ["id", "email", "image", "name", "make", "model", "year", "availability"]
       }
     }
   },
