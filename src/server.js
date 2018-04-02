@@ -16,8 +16,8 @@ app.get('/cars', function (req, res) {
 }) 
 
 app.get('/availability', function (req, res) {
-    var id = req.params.id;
-    console.log(id)
+    var id = req.query.id;
+
     AvailabilityService.getById(id)
         .then(data => {
             res.send(data)

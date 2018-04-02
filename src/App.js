@@ -31,6 +31,10 @@ class App extends Component {
         var joinPromises = cars.map( car => {
           return fetchAvailability(car) 
             .then(availability => {
+              if (!availability) {
+                console.error('Missing availability for ', car);
+                return {...car}
+              }
               return {
                 ...car,
                 availability: availability.availability
