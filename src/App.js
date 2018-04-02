@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import CarsList from './CarsList/CarsList';
@@ -7,13 +6,42 @@ import CarsList from './CarsList/CarsList';
 // import apiData from './api/db.json';
 // var cars = apiData.cars;
 
+function fetchAvailability (car) {
+  const url = `http://localhost:3001/availability?id=${car.id}`;
+
+  console.log(url)
+  return fetch(url)
+    .then (res => {
+      return res.json()
+    })
+    .then (json => json[0]);
+}
+
+function fetchCars () {
+  return fetch('http://localhost:3001/cars')
+    .then (res => res.json())
+}
+
 class App extends Component {
   state = {}
 
   componentDidMount() {
     console.log('fetch cars')
-    return fetch('http://localhost:3001/cars')
-      .then ( response => response.json())
+    return fetchCars()
+      .then ( cars => {
+        var joinPromises = cars.map( car => {
+          return fetchAvailability(car) 
+            .then(availability => {
+              console.log(availability)
+              return {
+                ...car,
+                availability: availability.availability
+              }
+            })
+        })
+
+        return Promise.all(joinPromises)
+      })
       .then ( cars => {
         console.log(cars)
         this.setState({cars})
