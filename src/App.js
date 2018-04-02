@@ -56,10 +56,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        <header className="App-header">
           <h1 className="App-title">Welcome to FancyCars.ca</h1>
-        </header> */}
+        </header>
         <CarsList cars={this.state.cars}/>
       </div>
     );
