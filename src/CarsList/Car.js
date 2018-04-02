@@ -8,10 +8,10 @@ const Car = ({ car }) => {
         availability,
         image
     } = car;
-    
+    console.log("ANYTHING")
     return (
         <div className="cars-list__car">
-            <img src={image} className="cars-list__car__image"/>
+            <img alt=""  className="cars-list__car__image"/>
             <h2 className="cars-list__car__name">{name}</h2>
             <p className="cars-list__car__make"><b>Make:</b>{make}</p>
             <p className="cars-list__car__make"><b>Model:</b>{model}</p>

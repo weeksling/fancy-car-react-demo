@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import './CarsList.css';
 import Car from './Car';
 
+
 const CarsList = ( { cars = [] } ) => {
-    return (
+
+    return ( 
         <div className="cars-list">
             {
                 cars.map( (car,i) => <Car key={i} car={car} />)
