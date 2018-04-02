@@ -8,7 +8,7 @@ const Car = ({ car }) => {
         availability,
         image
     } = car;
-    console.log("ANYTHING")
+    
     return (
         <div className="cars-list__car">
             <img alt=""  className="cars-list__car__image"/>

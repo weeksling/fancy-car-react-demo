@@ -11,7 +11,7 @@
     {
       "id": "20",
       "image": "http://lorempixel.com/640/480/transport",
-      "name": "Schoen",
+      "name": "Senger",
       "make": "Blanda, Koepp and Bechtelar",
       "model": "Aufderhar Group",
       "year": "Fri Dec 15 2017 18:50:01 GMT-0500 (EST)"
@@ -96,7 +96,7 @@
     },
     {
       "id": "65",
-      "availability": "In Dealership"
+      "availability": "Unavailable"
     },
     {
       "id": "70",

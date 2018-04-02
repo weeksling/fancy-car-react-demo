@@ -26,13 +26,11 @@ class App extends Component {
   state = {}
 
   componentDidMount() {
-    console.log('fetch cars')
     return fetchCars()
       .then ( cars => {
         var joinPromises = cars.map( car => {
           return fetchAvailability(car) 
             .then(availability => {
-              console.log(availability)
               return {
                 ...car,
                 availability: availability.availability
