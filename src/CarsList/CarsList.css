@@ -1,0 +1,18 @@
+
+
+.cars-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 20px;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.cars-list__car {
+    flex: 1;
+    flex-basis: 48%;
+    text-align: left;
+    padding: 5px;
+    border: solid black 1px;
+}
